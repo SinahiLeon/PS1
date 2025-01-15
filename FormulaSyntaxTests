@@ -42,10 +42,10 @@ public class FormulaSyntaxTests
     ///       </item>
     /// </summary>
     [TestMethod]
-    [ExpectedException(typeof (FormulaFormatException) )]
-    public void FormulaConstructor_TestNoTokens_Invalid( )
+    [ExpectedException(typeof(FormulaFormatException))]
+    public void FormulaConstructor_TestNoTokens_Invalid()
     {
-        _ = new Formula( "" );  // note: it is arguable that you should replace "" with string.Empty for readability and clarity of intent (e.g., not a cut and paste error or a "I forgot to put something there" error).
+        _ = new Formula("");  // note: it is arguable that you should replace "" with string.Empty for readability and clarity of intent (e.g., not a cut and paste error or a "I forgot to put something there" error).
     }
 
     [TestMethod]
@@ -56,7 +56,7 @@ public class FormulaSyntaxTests
     }
 
     [TestMethod]
-    public void FormulaConstructor_TestOneToken_Valid ( )
+    public void FormulaConstructor_TestOneToken_Valid()
     {
         _ = new Formula("5");   // A number is a valid token
     }
@@ -67,52 +67,52 @@ public class FormulaSyntaxTests
 
     // --- Tests for Valid Token Rule ---
     [TestMethod]
-    public void FormulaConstructor_TestValidTokenParenthesis_Valid( )
+    public void FormulaConstructor_TestValidTokenParenthesis_Valid()
     {
-    _ = new Formula("()");
+        _ = new Formula("(1)");
     }
 
-[TestMethod]
-    public void FormulaConstructor_TestValidTokenPlus_Valid( )
+    [TestMethod]
+    public void FormulaConstructor_TestValidTokenPlus_Valid()
     {
-    _ = new Formula("+");
+        _ = new Formula("1+1");
     }
 
-[TestMethod]
-    public void FormulaConstructor_TestValidTokenMinus_Valid( )
+    [TestMethod]
+    public void FormulaConstructor_TestValidTokenMinus_Valid()
     {
-    _ = new Formula("-");
+        _ = new Formula("1-1");
     }
 
-[TestMethod]
-    public void FormulaConstructor_TestValidTokenStar_Valid( )
+    [TestMethod]
+    public void FormulaConstructor_TestValidTokenStar_Valid()
     {
-    _ = new Formula("*");
+        _ = new Formula("1*1");
     }
 
-[TestMethod]
-    public void FormulaConstructor_TestValidTokenForwardSlash_Valid( )
+    [TestMethod]
+    public void FormulaConstructor_TestValidTokenForwardSlash_Valid()
     {
-    _ = new Formula("/");
+        _ = new Formula("1/1");
     }
 
-[TestMethod]
-    public void FormulaConstructor_TestValidVariable_Valid( )
+    [TestMethod]
+    public void FormulaConstructor_TestValidVariable_Valid()
     {
-    _ = new Formula("Sinahi23");
+        _ = new Formula("Sinahi23");
     }
 
-[TestMethod]
-    public void FormulaConstructor_TestValidTokenNumber_Valid( )
+    [TestMethod]
+    public void FormulaConstructor_TestValidTokenNumber_Valid()
     {
-    _ = new Formula("2025");
+        _ = new Formula("2025");
     }
 
-[TestMethod]
+    [TestMethod]
     [ExpectedException(typeof(FormulaFormatException))]
-    public void FormulaConstructor_TestValidTokenSymbol_Invalid( )
+    public void FormulaConstructor_TestValidTokenSymbol_Invalid()
     {
-    _ = new Formula("%");    // Exception should be thrown for invalid token
+        _ = new Formula("%");    // Exception should be thrown for invalid token
     }
 
 
@@ -136,21 +136,21 @@ public class FormulaSyntaxTests
     ///   </remarks>
     /// </summary>
     [TestMethod]
-    public void FormulaConstructor_TestFirstTokenNumber_Valid( )
+    public void FormulaConstructor_TestFirstTokenNumber_Valid()
     {
-        _ = new Formula( "1+1" );
+        _ = new Formula("1+1");
     }
 
     [TestMethod]
     public void FormulaConstructor_TestFirstTokenVariable_Valid()
     {
-        _ = new Formula( "Aa11" );
+        _ = new Formula("Aa11");
     }
 
     [TestMethod]
     public void FormulaConstructor_TestFirstTokenParenthesis_Valid()
     {
-        _ = new Formula( "(5-5)" );
+        _ = new Formula("(5-5)");
     }
 
 
