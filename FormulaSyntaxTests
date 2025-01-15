@@ -21,15 +21,13 @@ using CS3500.Formula2; // Change this using statement to use different formula i
 [TestClass]
 public class FormulaSyntaxTests
 {
-    // --- Tests for One Token Rule --- 
+    // --- Tests for One Token Rule ---
 
     /// <summary>
     ///   <para>
     ///     This test makes sure the right kind of exception is thrown
     ///     when trying to create a formula with no tokens.
     ///   </para>
-    ///   <remarks>
-    ///     <list type="bullet">
     ///       <item>
     ///         We use the _ (discard) notation because the formula object
     ///         is not used after that point in the method.  Note: you can also
@@ -37,33 +35,11 @@ public class FormulaSyntaxTests
     ///         some of the required arguments to that method.
     ///       </item>
     ///       <item>
-    ///         string.Empty is often considered best practice (rather than using "") because it
-    ///         is explicit in intent (e.g., perhaps the coder forgot to but something in "").
-    ///       </item>
-    ///       <item>
-    ///         The name of a test method should follow the MS standard:
-    ///         https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices
-    ///       </item>
-    ///       <item>
     ///         All methods should be documented, but perhaps not to the same extent
     ///         as this one.  The remarks here are for your educational
     ///         purposes (i.e., a developer would assume another developer would know these
     ///         items) and would be superfluous in your code.
     ///       </item>
-    ///       <item>
-    ///         Notice the use of the attribute tag [ExpectedException] which tells the test
-    ///         that the code should throw an exception, and if it doesn't an error has occurred;
-    ///         i.e., the correct implementation of the constructor should result
-    ///         in this exception being thrown based on the given poorly formed formula.
-    ///       </item>
-    ///     </list>
-    ///   </remarks>
-    ///   <example>
-    ///     <code>
-    ///        // here is how we call the formula constructor with a string representing the formula
-    ///        _ = new Formula( "5+5" );
-    ///     </code>
-    ///   </example>
     /// </summary>
     [TestMethod]
     [ExpectedException(typeof (FormulaFormatException) )]
@@ -80,10 +56,9 @@ public class FormulaSyntaxTests
     }
 
     [TestMethod]
-    [ExpectedException(typeof (FormulaFormatException) )]
     public void FormulaConstructor_TestOneToken_Valid ( )
     {
-        _ = new Formula("a");
+        _ = new Formula("5");
     }
 
     // --- Tests for Valid Token Rule ---
