@@ -61,8 +61,52 @@ public class FormulaSyntaxTests
         _ = new Formula("5");   // A number is a valid token
     }
 
-    // --- Tests for Valid Token Rule ---
 
+
+
+
+    // --- Tests for Valid Token Rule ---
+    [TestMethod}
+    public void FormulaConstructor_TestValidTokenParenthesis_Valid( )
+    {
+    _ = new Formula("()");
+
+[TestMethod}
+    public void FormulaConstructor_TestValidTokenPlus_Valid( )
+    {
+    _ = new Formula("+");
+
+[TestMethod}
+    public void FormulaConstructor_TestValidTokenMinus_Valid( )
+    {
+    _ = new Formula("-");
+
+[TestMethod}
+    public void FormulaConstructor_TestValidTokenStar_Valid( )
+    {
+    _ = new Formula("*");
+
+[TestMethod}
+    public void FormulaConstructor_TestValidTokenForwardSlash_Valid( )
+    {
+    _ = new Formula("/");
+
+[TestMethod}
+    public void FormulaConstructor_TestValidVariable_Valid( )
+    {
+    _ = new Formula("Sinahi23");
+
+[TestMethod}
+    public void FormulaConstructor_TestValidTokenNumber_Valid( )
+    {
+    _ = new Formula("2025");
+
+[TestMethod]
+    [ExpectedException(typeof(FormulaFormatException))]
+    public void FormulaConstructor_TestValidTokenSymbol_Invalid( )
+    {
+    _ = new Formula("%");    // Exception should be thrown for invalid token
+    }
 
 
     // --- Tests for Closing Parenthesis Rule
