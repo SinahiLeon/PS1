@@ -58,10 +58,12 @@ public class FormulaSyntaxTests
     [TestMethod]
     public void FormulaConstructor_TestOneToken_Valid ( )
     {
-        _ = new Formula("5");
+        _ = new Formula("5");   // A number is a valid token
     }
 
     // --- Tests for Valid Token Rule ---
+
+
 
     // --- Tests for Closing Parenthesis Rule
 
