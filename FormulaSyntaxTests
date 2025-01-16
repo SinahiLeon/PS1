@@ -97,7 +97,7 @@ public class FormulaSyntaxTests
     }
 
     [TestMethod]
-    public void FormulaConstructor_TestValidVariable_Valid()
+    public void FormulaConstructor_TestValidTokenVariable_Valid()
     {
         _ = new Formula("Sinahi23");
     }
@@ -115,6 +115,18 @@ public class FormulaSyntaxTests
         _ = new Formula("%");    // Exception should be thrown for invalid token
     }
 
+    [TestMethod]
+    [ExpectedException(typeof(FormulaFormatException))]
+    public void FormulaConstructor_TestValidTokenAddingVariables_Invalid()
+    {
+        _ = new Formula("xx1 + xy");    // Variable + invalid token = Formula Format Exception
+    }
+
+    [TestMethod]
+    public void FormulaConstructor_TestValidTokensQuadruple_Valid()
+    {
+        _ = new Formula("x1 - 2e6 + 5.5 - y3");
+    }
 
     // --- Tests for Closing Parenthesis Rule
 
