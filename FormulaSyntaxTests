@@ -128,7 +128,33 @@ public class FormulaSyntaxTests
         _ = new Formula("x1 - 2e6 + 5.5 - y3");
     }
 
+
+
+
+
     // --- Tests for Closing Parenthesis Rule
+
+    [TestMethod]
+    [ExpectedException(typeof(FormulaFormatException))]
+    public void FormulaConstructor_TestSingleOpeningParenthesis_Invalid()
+    {
+        _ = new Formula("(1+2");
+    }
+
+    [TestMethod]
+    [ExpectedException(typeof(FormulaFormatException))]
+    public void FormulaConstructor_TestSingleClosingParenthesis_Invalid()
+    {
+        _ = new Formula("1+2)");
+    }
+
+    [TestMethod]
+    public void FormulaConstructor_TestNestedParenthesis_Valid()
+    {
+        _ = new Formula("((1*8)+(2/3))");
+    }
+
+
 
     // --- Tests for Balanced Parentheses Rule
 
